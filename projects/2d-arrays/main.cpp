@@ -7,15 +7,11 @@ using namespace std;
 
 const int STUDENTS = 3;
 const int ASSIGNMENTS = 4;
+const int LOW = 70, HIGH = 100;
+int cop1334[STUDENTS][ASSIGNMENTS], total = 0;
 
-
-int main()
-{
-	int cop1334[STUDENTS][ASSIGNMENTS], total = 0;
-	const int LOW = 70, HIGH = 100;
-
-	srand(time(0));
-
+void
+seed_database() {
 	for (int i = 0; i < STUDENTS; i++)
 	{
 		for (int j = 0; j < ASSIGNMENTS; j++)
@@ -23,9 +19,10 @@ int main()
 
 		cout << endl;
 	}
+}
 
-	cout << endl << endl;
-
+void
+list_averages() {
 	for (int i = 0; i < STUDENTS; i++)
 	{
 		for (int j = 0; j < ASSIGNMENTS; j++)
@@ -37,8 +34,10 @@ int main()
 		total = 0;
 	}
 
-	cout << endl << endl;
+}
 
+void
+last_bit() {
 	for (int j = 0; j < ASSIGNMENTS; j++)
 	{
 		for (int i = 0; i < STUDENTS; i++)
@@ -49,7 +48,17 @@ int main()
 
 		total = 0;
 	}
+}
 
-	system("pause");
-	return 0;
+int main()
+{
+
+	srand(time(0));
+	seed_database();
+	cout << endl << endl;
+	list_averages();
+	cout << endl << endl;
+	last_bit();
+
+	while(true) {}
 }
